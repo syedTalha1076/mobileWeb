@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - Talha Mobile</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Slide-in animation for checkout form */
+@keyframes slideFadeIn {
+    0% {opacity:0; transform: translateY(50px);}
+    100% {opacity:1; transform: translateY(0);}
+}
+
+/* Floating effect for order summary */
+.order-summary {
+    animation: floatUp 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0px);}
+    100% {transform: translateY(-10px);}
+}
+
+/* Hover glow for input fields */
+.form-control:hover, .form-select:hover {
+    box-shadow: 0 0 15px #00f5ff;
+    transition: 0.3s;
+}
+
+/* Hover glow for summary box */
+.order-summary:hover {
+    box-shadow: 0 0 25px #ff00c8;
+    transition: 0.4s;
+    transform: scale(1.02);
+}
+
+/* Animate checkout button with pulse */
+.btn-glow {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px #00f5ff; transform: scale(1); }
+    50% { box-shadow: 0 0 35px #ff00c8; transform: scale(1.05); }
+}
+</style>
+</head>
+<body>
+
+<div class="form-box container py-5">
+  <form class="mx-auto" style="max-width:800px; animation: slideFadeIn 1s ease forwards;">
+    <h2 class="text-center mb-4">🛒 Secure Checkout</h2>
+
+    <div class="row g-4">
+      <!-- BILLING -->
+      <div class="col-md-6">
+        <h3 class="mb-3">📦 Billing Details</h3>
+        <input type="text" class="form-control mb-2" placeholder="Full Name">
+        <input type="email" class="form-control mb-2" placeholder="Email Address">
+        <input type="tel" class="form-control mb-2" placeholder="Phone Number">
+        <input type="text" class="form-control mb-2" placeholder="Street Address">
+        <input type="text" class="form-control mb-2" placeholder="City">
+        <input type="text" class="form-control mb-2" placeholder="State / Province">
+        <input type="text" class="form-control mb-2" placeholder="Postal Code">
+        <input type="text" class="form-control mb-2" placeholder="Country">
+      </div>
+
+      <!-- PAYMENT -->
+      <div class="col-md-6">
+        <h3 class="mb-3">💳 Payment Information</h3>
+        <select class="form-select mb-2">
+          <option>Select Payment Method</option>
+          <option>Credit Card</option>
+          <option>Debit Card</option>
+          <option>PayPal</option>
+          <option>Cash on Delivery</option>
+        </select>
+        <input type="text" class="form-control mb-2" placeholder="Card Holder Name">
+        <input type="text" class="form-control mb-2" placeholder="Card Number">
+        <input type="text" class="form-control mb-2" placeholder="Expiry Date (MM/YY)">
+        <input type="text" class="form-control mb-2" placeholder="CVV">
+
+        <h3 class="mt-4 mb-2">🧾 Order Summary</h3>
+        <div class="p-3 rounded order-summary" style="background:rgba(255,255,255,0.05);">
+          <p>iPhone 15 Pro <span class="float-end">$1199</span></p>
+          <p>Samsung S24 Ultra <span class="float-end">$1099</span></p>
+          <hr style="border-color:rgba(255,255,255,0.2);">
+          <p class="fw-bold">Total <span class="float-end">$2298</span></p>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-glow w-100 mt-3">🔒 Place Secure Order</button>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

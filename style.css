@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* ================= NAV ================= */
+
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.05);
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00f5ff;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+.hero h1{
+    font-size:60px;
+    background:linear-gradient(90deg,#00f5ff,#ff00c8);
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:fadeIn 2s ease forwards;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:20px;
+    opacity:0;
+    animation:fadeIn 2s ease forwards 1s;
+}
+
+.btn-glow{
+    margin-top:30px;
+    padding:15px 40px;
+    border:none;
+    border-radius:40px;
+    background:#00f5ff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 0 20px #00f5ff;
+}
+
+.btn-glow:hover{
+    background:#ff00c8;
+    box-shadow:0 0 25px #ff00c8;
+    transform:scale(1.1);
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    padding:100px 10%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:0.5s;
+    transform-style:preserve-3d;
+}
+
+.card:hover{
+    transform:rotateY(10deg) scale(1.05);
+    box-shadow:0 0 30px #00f5ff;
+}
+
+.card img{
+    width:100%;
+    border-radius:15px;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= FORM ================= */
+
+.form-box{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:100px;
+}
+
+form{
+    background:transparent;
+    padding:0;
+    border-radius:0;
+    backdrop-filter:none;
+    width:100%;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+/* 🔥 FIRE ANIMATION BACKGROUND */
+
+.fire-bg{
+    position:relative;
+    overflow:hidden;
+}
+
+.fire-bg::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255,0,128,0.2), transparent 60%),
+        radial-gradient(circle at 30% 70%, rgba(255,100,0,0.3), transparent 60%),
+        radial-gradient(circle at 70% 30%, rgba(255,200,0,0.2), transparent 60%);
+    animation:fireMove 6s linear infinite;
+    z-index:0;
+}
+
+@keyframes fireMove{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* ================= LOGIN ================= */
+
+.login-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    padding:20px;
+}
+
+/* Animated Gradient Orbs (FIXED - No Cut) */
+
+.login-container::before,
+.login-container::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:radial-gradient(circle,#ff00c8,transparent 70%);
+    animation:moveOrb 8s infinite ease-in-out;
+    pointer-events:none;
+}
+
+.login-container::after{
+    background:radial-gradient(circle,#00f5ff,transparent 70%);
+    animation-delay:4s;
+}
+
+/* SAFE MOVEMENT (No Overflow) */
+@keyframes moveOrb{
+    0%{transform:translate(-60px,-60px);}
+    50%{transform:translate(60px,60px);}
+    100%{transform:translate(-60px,-60px);}
+}
+
+/* Login Box */
+
+.login-box{
+    position:relative;
+    z-index:2;
+    width:400px;
+    max-width:100%;
+    padding:40px;
+    border-radius:20px;
+    backdrop-filter:blur(25px);
+    background:rgba(255,255,255,0.05);
+    box-shadow:0 0 30px rgba(0,245,255,0.3);
+    animation:fadeSlide 1.5s ease forwards;
+}
+
+@keyframes fadeSlide{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Floating Labels */
+
+.input-group{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    background:rgba(255,255,255,0.1);
+    color:white;
+}
+
+.input-group label{
+    position:absolute;
+    top:14px;
+    left:15px;
+    color:#ccc;
+    transition:0.3s;
+    pointer-events:none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label{
+    top:-10px;
+    left:10px;
+    font-size:12px;
+    color:#00f5ff;
+}
+
+.input-group input:focus{
+    box-shadow:0 0 15px #00f5ff;
+}
+
+/* Animated Border */
+
+.login-box::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:22px;
+    background:linear-gradient(45deg,#00f5ff,#ff00c8,#00f5ff);
+    z-index:-1;
+    animation:rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder{
+    0%{filter:hue-rotate(0deg);}
+    100%{filter:hue-rotate(360deg);}
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:500px){
+    .hero h1{
+        font-size:40px;
+    }
+
+    .login-box{
+        padding:25px;
+    }
+
+    form{
+        width:100%;
+    }
+}

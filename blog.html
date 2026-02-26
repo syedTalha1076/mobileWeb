@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Talha Mobile</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* Animated card hover */
+.blog-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 20px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 30px #00f5ff, 0 0 60px #ff00c8;
+}
+
+/* Gradient title inside card */
+.blog-card h3 {
+    background: linear-gradient(90deg, #00f5ff, #ff00c8);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Animated floating icon in card */
+.blog-card::before {
+    content: "💡";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 40px;
+    opacity: 0.2;
+    animation: floatIcon 3s infinite alternate;
+}
+
+@keyframes floatIcon {
+    0% { transform: translateY(0) rotate(0deg);}
+    100% { transform: translateY(-15px) rotate(20deg);}
+}
+
+/* Card text animation */
+.blog-card p {
+    opacity: 0;
+    animation: fadeInText 1s forwards;
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(15px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<section class="container py-5">
+    <h1 class="text-center mb-5" style="background:linear-gradient(90deg,#00f5ff,#ff00c8);-webkit-background-clip:text;color:transparent;">
+        🔥 Talha Mobile Tech Blog
+    </h1>
+
+    <div class="row g-4">
+
+        <!-- Blog Post 1 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-card">
+                <h3>🔥 iPhone 16 Leaks</h3>
+                <p>The AI camera upgrade and titanium frame are rumored to make the iPhone 16 the most futuristic smartphone yet. Prepare for mind-blowing photography and sleek design!</p>
+            </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-card">
+                <h3>🚀 Android 15 Features</h3>
+                <p>Discover new privacy enhancements, improved battery optimization, and smooth gesture controls. Android 15 promises an ultra-smart experience for tech enthusiasts.</p>
+            </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-card">
+                <h3>📱 Foldable Revolution</h3>
+                <p>Samsung and Huawei push foldable technology forward with stunning durability and innovative multi-tasking features. The future of flexible smartphones is here!</p>
+            </div>
+        </div>
+
+        <!-- Blog Post 4 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-card">
+                <h3>🎮 Gaming Phones 2026</h3>
+                <p>ROG and RedMagic dominate the gaming scene with extreme performance, high refresh rates, and advanced cooling. Game on-the-go like a pro!</p>
+            </div>
+        </div>
+
+        <!-- Blog Post 5 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-card">
+                <h3>📸 Smartphone Photography</h3>
+                <p>Capture DSLR-level shots with cutting-edge AI cameras and night modes. Learn tips to elevate your mobile photography to professional standards.</p>
+            </div>
+        </div>
+
+        <!-- Blog Post 6 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-card">
+                <h3>🌐 6G Connectivity</h3>
+                <p>Explore the future of ultra-fast mobile internet, ultra-low latency, and AI-powered network optimization. 6G is set to revolutionize communication globally.</p>
+            </div>
+        </div>
+
+        <!-- Blog Post 7 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-card">
+                <h3>🔐 Privacy & Security</h3>
+                <p>Learn the latest updates on mobile security, from encrypted messaging to AI-driven threat detection. Keep your smartphone and data ultra-safe.</p>
+            </div>
+        </div>
+
+        <!-- Blog Post 8 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="blog-card">
+                <h3>⚡ Fast Charging Tech</h3>
+                <p>Charge your smartphone from 0% to 100% in minutes with cutting-edge 300W+ fast charging. Never wait for your phone to power up again!</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
